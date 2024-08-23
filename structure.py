@@ -14,6 +14,7 @@ from griptape.events import (
 )
 from griptape.structures import Agent
 from griptape.tools import CalculatorTool
+from griptape.rules import Rule
 from typing import Optional
 
 
@@ -63,7 +64,7 @@ def run_example_with_griptape_agent(
         event_driver (optional): the object that will publish events as the agent thinks.
     """
 
-    structure = Agent(tools=[CalculatorTool(off_prompt=False)])
+    structure = Agent(rules=[Rule("You are an expert in using UnrealEngine5")])
 
     structure.run(input)
 
